@@ -4,11 +4,16 @@
 
 package fracCalc;
 
+import java.util.Scanner;
+
 public class FracCalc {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) 
+    { 
         // TODO: Read the input from the user and call produceAnswer with an equation
+    	Scanner console = new Scanner(System.in);
+    	String input = console.nextLine();
+    	System.out.println(produceAnswer(input));
 
     }
 
@@ -23,9 +28,14 @@ public class FracCalc {
     public static String produceAnswer(String input)
     {
         // TODO: Implement this function to produce the solution to the input
-
-        return "";
-    }
+    	String firstOp =
+    			input.substring(0,input.indexOf(' '));
+    	String secondOp = 
+    			input.substring(input.indexOf(' ') + 3, input.length());
+    	String operator = input.substring(input.indexOf(' ') + 1,input.indexOf(' ') + 2);
+    	return secondOp;
+    	
+  }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
 
