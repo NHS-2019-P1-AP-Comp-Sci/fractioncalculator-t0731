@@ -98,7 +98,9 @@ public class FracCalc {
 		resultWholeNum = (numeratorCalculationResult / resultDenominator);
 		resultNumerator = numeratorCalculationResult - (resultWholeNum * resultDenominator);
 
-		
+		int gcd = Math.abs(gcd(resultNumerator, resultDenominator));
+		resultDenominator = Math.abs(resultDenominator / gcd);
+		resultNumerator = (resultNumerator / gcd);
 		
 		String output = "";
 
@@ -175,6 +177,11 @@ public class FracCalc {
 			return 1;
 		}
 	}
-
+	public static int gcd(int x, int y) {
+		if (y == 0 ) {
+			return x;
+		}
+		return gcd(y, x % y );
+	}
 	
 }
